@@ -59,6 +59,21 @@ install -m 755 tm /opt/homebrew/bin/tm
 - SSH 先で `tmux` が使える
 - Bash で実行できる環境
 
+## トラブルシュート
+
+`claude` / `codex` 実行時に `uv_cwd` の `EPERM` / `EACCES` / `ENOENT` が出る場合は、
+現在の作業ディレクトリが壊れている（アクセス不可 or 消えている）可能性があります。
+
+まずは tmux 内で以下を実行してください。
+
+```bash
+cd ~
+/bin/pwd
+node -e 'console.log(process.cwd())'
+```
+
+これで動く場合は、元のディレクトリ権限や削除状態を確認してください。
+
 ## どういう人向けか
 
 - Claude Code のアプリより `tmux` を使い続けたい

@@ -1,5 +1,13 @@
 # tm
 
+Stop typing this:
+
+tmux attach -t work
+tmux new -A -s work
+
+Just run:
+tm work
+
 Claude Code がアプリを出しても、`tmux` なら Codex でも Claude Code でも何でも使えるだろう、という前提で作った小さいランチャーです。
 
 SSH 先で `tm` と打つだけで、
